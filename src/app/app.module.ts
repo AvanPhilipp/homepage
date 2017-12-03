@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router'
-
+import { RouterModule, Routes } from '@angular/router';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { AngularFireModule } from "angularfire2";
+import { AngularFireDatabaseModule } from "angularfire2/database";
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './parts/header/header.component'
@@ -10,16 +12,7 @@ import { LoginComponent } from './components/login/login.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { SecretComponent } from './components/secret/secret.component';
 import { GrandSecretComponent } from './components/grand-secret/grand-secret.component'
-
-export const firebaseConfig = {
-  apiKey: "AIzaSyDFOJTQY6vc6hrUQnOHdJDXuupZUWB9C5Q",
-  authDomain: "fealoce-homepage.firebaseapp.com",
-  databaseURL: "https://fealoce-homepage.firebaseio.com",
-  projectId: "fealoce-homepage",
-  storageBucket: "",
-  messagingSenderId: "661369676577"
-};
-// firebase.initializeApp(config);
+import { environment } from '../environments/environment';
 
 const appRoutes: Routes =[
   { path:"", component: WelcomeComponent, pathMatch: 'full' },
@@ -40,7 +33,10 @@ const appRoutes: Routes =[
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    AngularFontAwesomeModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
