@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AngularFireModule } from "angularfire2";
+import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from "angularfire2/database";
 
 import { AppComponent } from './app.component';
@@ -13,6 +14,9 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { SecretComponent } from './components/secret/secret.component';
 import { GrandSecretComponent } from './components/grand-secret/grand-secret.component'
 import { environment } from '../environments/environment';
+
+import { SecretService } from "./components/secret/secret.service";
+import { FirebaseService } from "./services/firebase/firebase.service";
 
 const appRoutes: Routes =[
   { path:"", component: WelcomeComponent, pathMatch: 'full' },
@@ -38,7 +42,9 @@ const appRoutes: Routes =[
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule
   ],
-  providers: [],
+  providers: [
+    SecretService
+  ],
   bootstrap: [AppComponent]
 })
 
