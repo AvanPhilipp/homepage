@@ -7,10 +7,10 @@ import { Character } from './../../models/character.model';
 @Injectable()
 export class SecretService {
 
-  _characters: Observable<Character[]>;
+  private _characters: Observable<Character[]>;
 
-  constructor(database: AngularFireDatabase) {
-    this._characters = database.list('characters').valueChanges() as Observable<Character[]>;
+  constructor(private database: AngularFireDatabase) {
+    this._characters = this.database.list('characters').valueChanges() as Observable<Character[]>;
   }
 
   get characters (){

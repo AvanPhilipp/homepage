@@ -22,4 +22,9 @@ describe('WelcomeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should rad title',() => {
+    expect(component.name).toBe("Fealoce honlapján");
+  })
+
 });

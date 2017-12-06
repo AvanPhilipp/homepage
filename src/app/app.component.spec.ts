@@ -1,27 +1,51 @@
-import { TestBed, async } from '@angular/core/testing';
+// import { AngularFontAwesomeModule } from 'angular-font-awesome';
+// import { LoginComponent } from './components/login/login.component';
+// import { SecretComponent } from './components/secret/secret.component';
+// import { WelcomeComponent } from './components/welcome/welcome.component';
+// import { appRoutes } from './app.routes';
+// import { FooterComponent } from './parts/footer/footer.component';
+import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+// import { HeaderComponent } from './parts/header/header.component';
+// import { RouterModule } from '@angular/router';
+// import { GrandSecretComponent } from './components/grand-secret/grand-secret.component';
+
 describe('AppComponent', () => {
+
+  let fixture: ComponentFixture<AppComponent>;
+  let app: AppComponent;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        // HeaderComponent,
+        // FooterComponent,
+        // WelcomeComponent,
+        // SecretComponent,
+        // GrandSecretComponent,
+        // LoginComponent
       ],
+      imports: [
+        // AngularFontAwesomeModule,
+        // RouterModule.forRoot(appRoutes)
+      ],
+      providers: [
+        // {provide: APP_BASE_HREF, useValue: '/'}
+      ]
     }).compileComponents();
   }));
+
+  beforeEach(()=>{
+    fixture = TestBed.createComponent(AppComponent);
+    app = fixture.debugElement.componentInstance;
+  });
+
   it('should create the app', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
-  it(`should have as title 'app'`, async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('app');
-  }));
-  it('should render title in a h1 tag', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to app!');
+  
+  it('should have name', async(() => {
+    expect(app.name).toEqual('Fealoce');
   }));
 });

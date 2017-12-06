@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { SecretService } from './secret.service';
 import { SecretComponent } from './secret.component';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 describe('SecretComponent', () => {
   let component: SecretComponent;
@@ -8,7 +8,12 @@ describe('SecretComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SecretComponent ]
+      declarations: [
+        SecretComponent
+      ],
+      providers: [
+        SecretService
+      ]
     })
     .compileComponents();
   }));
