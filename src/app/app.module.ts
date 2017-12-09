@@ -3,11 +3,19 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
+import { SecretComponent } from './components/secret/secret.component';
+import { HeaderComponent } from './parts/header/header.component';
+import { FooterComponent } from './parts/footer/footer.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WelcomeComponent,
+    SecretComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule
