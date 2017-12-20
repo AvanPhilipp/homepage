@@ -1,7 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Router } from "@angular/router";
+import { FormsModule } from '@angular/forms';
+
+import { MaterialModule } from './material/material.module';
 
 import { appRoutes } from './app.routes';
 
@@ -10,6 +14,7 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { SecretComponent } from './components/secret/secret.component';
 import { HeaderComponent } from './parts/header/header.component';
 import { FooterComponent } from './parts/footer/footer.component';
+import { DatepickerComponent } from './parts/datepicker/datepicker.component';
 
 
 @NgModule({
@@ -18,13 +23,23 @@ import { FooterComponent } from './parts/footer/footer.component';
     WelcomeComponent,
     SecretComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    DatepickerComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    BrowserAnimationsModule,
+    RouterModule.forRoot(appRoutes),
+    MaterialModule,
+    FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ],
+  entryComponents: [
+    DatepickerComponent
+  ]
+
 })
 export class AppModule { }
