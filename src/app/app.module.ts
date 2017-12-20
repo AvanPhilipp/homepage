@@ -6,6 +6,7 @@ import { Router } from "@angular/router";
 import { FormsModule } from '@angular/forms';
 
 import { MaterialModule } from './material/material.module';
+import { DateTimePickerModule } from 'ng-pick-datetime';
 
 import { appRoutes } from './app.routes';
 
@@ -31,6 +32,7 @@ import { DatepickerComponent } from './parts/datepicker/datepicker.component';
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),
     MaterialModule,
+    DateTimePickerModule,
     FormsModule
   ],
   providers: [],

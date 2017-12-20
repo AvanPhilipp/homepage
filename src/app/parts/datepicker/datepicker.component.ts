@@ -13,6 +13,9 @@ export class DatepickerComponent implements OnInit {
   ngOnInit() {
   }
 
-  public date: Date = new Date();
+  public date = new Date();
+  public day = this.date.getDay();
+  public time = this.date.getTime();
+
 
 }

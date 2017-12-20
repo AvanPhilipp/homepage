@@ -22,6 +22,7 @@ export class WelcomeComponent implements OnInit {
     let dialog = this._dialog.open(DatepickerComponent);
     dialog.afterClosed().subscribe(selection => {
         console.log(selection);
+        this.selectedDate = selection;
         // if (selection) {
         //   this.selectedEmoji = selection;
         // } else {
