@@ -13,6 +13,6 @@ export class DatepickerComponent implements OnInit {
   ngOnInit() {
   }
 
-  public date : Date;
+  public date: Date = new Date();
 
 }
