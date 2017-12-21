@@ -23,11 +23,6 @@ export class WelcomeComponent implements OnInit {
     dialog.afterClosed().subscribe(selection => {
         console.log(selection);
         this.selectedDate = selection;
-        // if (selection) {
-        //   this.selectedEmoji = selection;
-        // } else {
-        //   // User clicked 'Cancel' or clicked outside the dialog
-        // }
       });
   }
 }

@@ -1,3 +1,4 @@
+import { EventService } from './services/event.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
@@ -8,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 import { MaterialModule } from './material/material.module';
 import { DateTimePickerModule } from 'ng-pick-datetime';
 
+import { CalendarModule } from "angular-calendar";
+
 import { appRoutes } from './app.routes';
 
 import { AppComponent } from './app.component';
@@ -16,6 +19,9 @@ import { SecretComponent } from './components/secret/secret.component';
 import { HeaderComponent } from './parts/header/header.component';
 import { FooterComponent } from './parts/footer/footer.component';
 import { DatepickerComponent } from './parts/datepicker/datepicker.component';
+import { EventsComponent } from './parts/events/events.component';
+import { CalendarHeaderComponent } from './parts/calendar-header/calendar-header.component';
+import { EditEventComponent } from './parts/edit-event/edit-event.component';
 
 
 @NgModule({
@@ -25,7 +31,10 @@ import { DatepickerComponent } from './parts/datepicker/datepicker.component';
     SecretComponent,
     HeaderComponent,
     FooterComponent,
-    DatepickerComponent
+    DatepickerComponent,
+    EventsComponent,
+    CalendarHeaderComponent,
+    EditEventComponent
   ],
   imports: [
     BrowserModule,
@@ -33,14 +42,18 @@ import { DatepickerComponent } from './parts/datepicker/datepicker.component';
     RouterModule.forRoot(appRoutes),
     MaterialModule,
     DateTimePickerModule,
-    FormsModule
+    FormsModule,
+    CalendarModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    EventService
+  ],
   bootstrap: [
     AppComponent
   ],
   entryComponents: [
-    DatepickerComponent
+    DatepickerComponent,
+    EditEventComponent
   ]
 
 })

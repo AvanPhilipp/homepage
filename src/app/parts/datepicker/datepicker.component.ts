@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
+import { Input } from '@angular/core/src/metadata/directives';
 
 @Component({
   selector: 'app-datepicker',
@@ -16,6 +17,4 @@ export class DatepickerComponent implements OnInit {
   public date = new Date();
   public day = this.date.getDay();
   public time = this.date.getTime();
-
-
 }
