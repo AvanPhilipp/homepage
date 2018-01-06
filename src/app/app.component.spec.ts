@@ -7,12 +7,10 @@ import { RouterTestingModule } from "@angular/router/testing";
 import { appRoutes } from "./app.routes";
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './parts/header/header.component';
-import { FooterComponent } from './parts/footer/footer.component';
-import { WelcomeComponent } from "./components/welcome/welcome.component";
-import { SecretComponent } from './components/secret/secret.component';
 import { Location } from '@angular/common';
 import { DebugElement } from '@angular/core/src/debug/debug_node';
+import { LayoutModule } from './layout/layout.module';
+import { PagesModule } from './pages/pages.module';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -23,12 +21,10 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        HeaderComponent,
-        FooterComponent,
-        WelcomeComponent,
-        SecretComponent
       ],
       imports: [
+        LayoutModule,
+        PagesModule,
         RouterTestingModule.withRoutes(appRoutes)
       ]
     }).compileComponents();
@@ -49,21 +45,17 @@ describe('AppComponent', () => {
     expect(component).toBeTruthy();
   }));
   
-  it(`should have as title 'app'`, async(() => {
-    expect(component.title).toEqual('app');
-  }));
-  
   it('should render the header, the footer, and the main',()=>{
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('app-header')).toBeTruthy();
+    expect(compiled.querySelector('fea-header')).toBeTruthy();
     expect(compiled.querySelector('router-outlet')).toBeTruthy();
-    expect(compiled.querySelector('app-footer')).toBeTruthy();
+    expect(compiled.querySelector('fea-footer')).toBeTruthy();
   });
 
   it('should load WelcomeComponent',async () => {
     await router.navigate(['/']);
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('app-welcome')).toBeTruthy();
+    expect(compiled.querySelector('fea-welcome')).toBeTruthy();
   });
 
   it('should load SecretComponent', async () => {

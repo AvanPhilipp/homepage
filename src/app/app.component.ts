@@ -1,9 +1,7 @@
-import { HeaderComponent } from './parts/header/header.component';
-import { FooterComponent } from './parts/footer/footer.component';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+  selector: 'fea-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
