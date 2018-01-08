@@ -11,6 +11,7 @@ import { Location } from '@angular/common';
 import { DebugElement } from '@angular/core/src/debug/debug_node';
 import { LayoutModule } from './layout/layout.module';
 import { PagesModule } from './pages/pages.module';
+import { MaterialModule } from './material/material.module';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -45,9 +46,10 @@ describe('AppComponent', () => {
     expect(component).toBeTruthy();
   }));
   
-  it('should render the header, the footer, and the main',()=>{
+  it('should render the header, the sidebar, the footer, and the main',()=>{
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('fea-header')).toBeTruthy();
+    expect(compiled.querySelector('fea-sidebar')).toBeTruthy();
     expect(compiled.querySelector('router-outlet')).toBeTruthy();
     expect(compiled.querySelector('fea-footer')).toBeTruthy();
   });
