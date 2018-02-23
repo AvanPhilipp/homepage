@@ -1,0 +1,16 @@
+
+<mat-sidenav-container>
+    <mat-sidenav>
+        <mat-list *ngFor="let document of documents" (click)="selectedDocument=document">
+            {{document.title}} ({{document.ID}})
+        </mat-list>
+    </mat-sidenav>
+    <mat-toolbar>
+        <button mat-button (click)="add()" >Add new Document</button>
+        <button mat-button (click)="edit()" >Edit Document</button>
+    </mat-toolbar>
+    <mat-card *ngIf="selectedDocument">
+        <mat-card-title>{{selectedDocument.title}}</mat-card-title>
+    </mat-card>
+
+</mat-sidenav-container>

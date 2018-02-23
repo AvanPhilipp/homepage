@@ -11,7 +11,7 @@ import { MatDialogModule } from "@angular/material/dialog";
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
-import { MatNativeDateModule } from '@angular/material';
+import { MatNativeDateModule, MatSidenavModule, MatListModule } from '@angular/material';
 import { MatFormFieldModule } from "@angular/material";
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
@@ -33,7 +33,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatSidenavModule
   ],
   exports: [
     MatButtonModule,
@@ -49,7 +50,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatSidenavModule,
+    MatListModule
   ],
   declarations: []
 })

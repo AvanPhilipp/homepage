@@ -10,8 +10,7 @@ export class AuthService {
   ) { }
 
   public get $user(){
-    // console.log("Auth: ", this._auth.auth);
-    return this._auth.authState// .subscribe(error=>{console.log(error)}) as Observable<firebase.User>;
+    return this._auth.authState;
   }
 
 }
